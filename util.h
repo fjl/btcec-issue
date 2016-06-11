@@ -19,7 +19,7 @@ parsehex(char* input, size_t len)
 	if ((ret = calloc(len, 1)) == NULL) {
 		fatal("can't allocate");
 	}
-	for (int i = 0; i < len; i++) {
+	for (size_t i = 0; i < len; i++) {
 		if (!sscanf(&input[2*i], "%02x", &b)) {
 			free(ret);
 			return NULL;

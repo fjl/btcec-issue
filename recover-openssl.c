@@ -1,6 +1,5 @@
 #include <openssl/bn.h>
 #include <openssl/ecdsa.h>
-#include <openssl/rand.h>
 #include <openssl/obj_mac.h>
 
 #include "util.h"
