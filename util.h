@@ -8,18 +8,21 @@ fatal(char* message)
 	exit(1);
 }
 
-static const unsigned char*
-parsehex(char* input, size_t len)
+static unsigned char*
+parsehex(const char* input, size_t len)
 {
 	unsigned char* ret;
 	unsigned int b;
-	if (strlen(input) != len*2) {
+	size_t inputlen = strlen(input);
+
+	if (inputlen == 0 || inputlen > len*2 || inputlen%2 != 0) {
 		return NULL;
 	}
 	if ((ret = calloc(len, 1)) == NULL) {
 		fatal("can't allocate");
 	}
-	for (size_t i = 0; i < len; i++) {
+	size_t i = len - inputlen/2;
+	for (; i < len; i++) {
 		if (!sscanf(&input[2*i], "%02x", &b)) {
 			free(ret);
 			return NULL;

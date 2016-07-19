@@ -30,7 +30,9 @@ sig=00000000000000000000000000000000000000000000000000000000000000002c0000000000
 checkrecover
 
 
-echo "\n\nSCALAR MULT"
+echo
+echo
+echo "SCALAR MULT"
 
 checkscalarmult () {
     echo ================================
@@ -38,6 +40,8 @@ checkscalarmult () {
     echo scalar = $scalar
     echo --- openssl
     ./scalarmult-openssl $point $scalar
+    echo --- secp256k1
+    ./scalarmult-libsecp256k1 $point $scalar
     echo --- btcec
     go run scalarmult-btcec.go $point $scalar
 }

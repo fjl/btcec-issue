@@ -1,3 +1,5 @@
 /recover-libsecp256k1
 /recover-openssl
 /scalarmult-openssl
+/scalarmult-libsecp256k1
+
