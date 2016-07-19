@@ -73,6 +73,5 @@ main(int argc, char* argv[])
 	if (!secp256k1_pubkey_scalar_mul(ctx, point, scalar)) {
 		fatal("scalar mult failed");
 	}
-
-	printf("pubkey: 04%s\n", encodehex(point, 64));
+	printf("result: 04%s\n", encodehex(point, 64));
 }
