@@ -24,7 +24,7 @@ main(int argc, char* argv[])
 		fatal("can't parse first argument as hex ec point");
 	}
 	BIGNUM* scalar = NULL;
-	if (!BN_hex2bn(&scalar, argv[1])) {
+	if (!BN_hex2bn(&scalar, argv[2])) {
 		fatal("can't parse second argument as hex number");
 	}
 
