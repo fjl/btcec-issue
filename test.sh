@@ -40,7 +40,7 @@ checkscalarmult () {
     echo scalar = $scalar
     echo --- openssl
     ./scalarmult-openssl $point $scalar
-    echo --- secp256k1
+    echo --- libsecp256k1
     ./scalarmult-libsecp256k1 $point $scalar
     echo --- btcec
     go run scalarmult-btcec.go $point $scalar
